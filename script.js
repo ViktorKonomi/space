@@ -267,6 +267,30 @@ document.getElementById('resetGame').addEventListener('click', function() {
     console.log('Game reset.');
 });
 
+// Function to initialize section toggles (only for mobile)
+function initializeSectionToggles() {
+    const sections = document.querySelectorAll('.section');
+
+    sections.forEach(section => {
+        const title = section.querySelector('h2');
+        const toggleArrow = title.querySelector('.toggle-arrow');
+        const content = section.querySelector('.section-content');
+
+        title.addEventListener('click', () => {
+            if (isMobileViewport()) {
+                section.classList.toggle('active');
+                toggleArrow.classList.toggle('rotate');
+            }
+        });
+    });
+}
+
+// Function to detect if viewport is mobile size
+function isMobileViewport() {
+    return window.innerWidth <= 768; // Adjust as per your mobile breakpoint
+}
+
+
 // Function to simulate game loop (update production rates)
 setInterval(function() {
     updateProductionRates();

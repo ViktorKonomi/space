@@ -157,3 +157,29 @@ button:hover .tooltip {
     font-size: 14px;
     color: #ccc;
 }
+
+/* Toggle arrow styling */
+.toggle-arrow {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 8px solid #9575cd; /* Light purple arrow */
+    transition: transform 0.3s ease;
+    transform-origin: center;
+}
+
+.rotate {
+    transform: rotate(90deg); /* Rotate arrow when section is active */
+}
+
+/* Hide section content by default */
+.section-content {
+    display: none;
+}
+
+/* Display section content when active class is present */
+.section.active .section-content {
+    display: block;
+}
